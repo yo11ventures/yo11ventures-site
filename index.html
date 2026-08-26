@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Yo Eleven Ventures, LLC</title>
 
   <meta
     name="description"
-    content="Yo Eleven Ventures, LLC is a Texas technology company developing intelligent software and digital products that simplify complex problems and improve decision-making."
-  >
+    content="Yo Eleven Ventures, LLC develops technology designed to simplify complex problems, reduce friction, and improve everyday decision-making."
+  />
 
-  <meta name="theme-color" content="#070a0f">
+  <meta name="theme-color" content="#050505" />
 
   <style>
     :root {
-      --bg: #070a0f;
-      --panel: #11151a;
-      --text: #f4f6f8;
-      --muted: #9aa3af;
-      --dim: #717b88;
+      --bg: #050505;
+      --bg-soft: #0a0a0a;
+      --panel: #101010;
+      --panel-hover: #151515;
+      --text: #f5f5f5;
+      --text-soft: #b8b8b8;
+      --text-dim: #757575;
       --line: rgba(255,255,255,.10);
-      --line-strong: rgba(255,255,255,.16);
-      --max: 1024px;
+      --line-strong: rgba(255,255,255,.18);
+      --max-width: 1180px;
+      --radius: 26px;
     }
 
     * {
@@ -36,7 +39,7 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 50% -20%, #17202c 0%, #0b1017 34%, var(--bg) 64%);
+        radial-gradient(circle at 50% -10%, #202020 0%, #0a0a0a 28%, #050505 58%);
       color: var(--text);
       font-family:
         -apple-system,
@@ -56,195 +59,401 @@
     }
 
     .container {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* HERO */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5,5,5,.78);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: -.03em;
+      font-size: 18px;
+    }
+
+    .brand span {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .hero {
-      min-height: 72vh;
+      min-height: calc(100vh - 68px);
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-inner {
-      padding: 86px 0 100px;
+    .hero-content {
+      padding: 105px 0 120px;
+      max-width: 1000px;
     }
 
     .eyebrow {
-      margin-bottom: 30px;
-      color: var(--muted);
+      margin-bottom: 28px;
+      color: var(--text-dim);
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: .26em;
+      letter-spacing: .22em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(68px, 10vw, 118px);
-      line-height: .84;
-      letter-spacing: -.07em;
-      font-weight: 760;
+      max-width: 1000px;
+      font-size: clamp(62px, 9vw, 128px);
+      line-height: .91;
+      font-weight: 720;
+      letter-spacing: -.065em;
     }
 
-    .tagline {
-      max-width: 700px;
-      margin: 38px 0 0;
-      color: #d4d9df;
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1.22;
-      letter-spacing: -.035em;
+    .hero-sub {
+      margin-top: 42px;
+      max-width: 780px;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.34;
+      letter-spacing: -.03em;
+      color: #d5d5d5;
     }
 
-    /* SECTIONS */
+    .hero-meta {
+      margin-top: 42px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text-soft);
+      font-size: 13px;
+      background: rgba(255,255,255,.025);
+    }
 
     section {
-      padding: 82px 0;
+      padding: 95px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    .section-label {
-      margin-bottom: 42px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .24em;
-      text-transform: uppercase;
+    .section-top {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 60px;
+      margin-bottom: 56px;
     }
 
-    /* PRODUCT CARDS */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
 
-    .work-grid {
+    .section-lead {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.18;
+      letter-spacing: -.04em;
+      font-weight: 580;
+    }
+
+    .venture-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .card {
-      min-height: 290px;
-      padding: 32px;
+    .venture-card {
+      min-height: 350px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: rgba(255,255,255,.035);
+      padding: 34px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.018)
+        );
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: var(--radius);
       transition:
-        transform .22s ease,
-        border-color .22s ease,
-        background .22s ease;
+        border-color .25s ease,
+        transform .25s ease,
+        background .25s ease;
     }
 
-    .card:hover {
+    .venture-card:hover {
       transform: translateY(-3px);
       border-color: var(--line-strong);
-      background: rgba(255,255,255,.055);
+      background: var(--panel-hover);
     }
 
     .status {
       width: fit-content;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
+      padding: 8px 11px;
       border-radius: 999px;
-      color: var(--muted);
+      border: 1px solid var(--line);
+      color: var(--text-dim);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .10em;
       text-transform: uppercase;
     }
 
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: clamp(38px, 5vw, 56px);
+    .venture-title {
+      margin: 0 0 15px;
+      font-size: clamp(40px, 5vw, 66px);
       line-height: .98;
-      letter-spacing: -.05em;
+      letter-spacing: -.055em;
     }
 
-    .card p {
-      max-width: 430px;
+    .venture-description {
+      max-width: 460px;
       margin: 0;
-      color: var(--muted);
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .focus-item {
+      padding: 28px 24px;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .focus-number {
+      margin-bottom: 42px;
+      color: var(--text-dim);
+      font-size: 12px;
+    }
+
+    .focus-title {
+      margin-bottom: 14px;
+      font-size: 22px;
+      font-weight: 620;
+      letter-spacing: -.025em;
+    }
+
+    .focus-copy {
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .principles {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 60px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle-title {
+      font-weight: 620;
       font-size: 17px;
-      line-height: 1.5;
     }
 
-    /* ABOUT */
+    .principle-copy {
+      max-width: 740px;
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-    .about-copy {
-      max-width: 820px;
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .company-large {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.18;
+      letter-spacing: -.04em;
       margin: 0;
-      color: #d5d9de;
-      font-size: clamp(27px, 3.7vw, 42px);
-      line-height: 1.36;
-      letter-spacing: -.035em;
     }
 
-    /* FOOTER */
+    .company-copy {
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    .company-facts {
+      margin-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .fact-key {
+      color: var(--text-dim);
+    }
+
+    .fact-value {
+      text-align: right;
+    }
+
+    .contact-section {
+      padding-top: 115px;
+      padding-bottom: 115px;
+    }
+
+    .contact-big {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(52px, 8vw, 106px);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 42px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--line-strong);
+      color: var(--text-soft);
+      font-size: 20px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--text);
+      border-color: var(--text);
+    }
 
     footer {
-      padding: 38px 0 52px;
+      padding: 34px 0 48px;
+      color: var(--text-dim);
+      font-size: 13px;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      gap: 30px;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .company-name {
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 650;
-    }
-
-    .legal,
-    .contact {
-      color: var(--dim);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .contact a {
-      transition: color .2s ease;
-    }
-
-    .contact a:hover {
-      color: var(--text);
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        width: min(100% - 28px, var(--max));
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
       }
 
-      .hero {
-        min-height: 70vh;
+      .section-top,
+      .principle,
+      .company-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
       }
 
-      .hero-inner {
-        padding: 70px 0 82px;
-      }
-
-      section {
-        padding: 66px 0;
-      }
-
-      .work-grid {
+      .venture-grid,
+      .focus-grid {
         grid-template-columns: 1fr;
       }
 
-      .card {
-        min-height: 260px;
-        padding: 27px;
+      .hero {
+        min-height: 80vh;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      section {
+        padding: 76px 0;
+      }
+
+      .hero-content {
+        padding: 82px 0 92px;
+      }
+
+      .venture-card {
+        min-height: 300px;
+        padding: 28px;
+      }
+
+      .focus-number {
+        margin-bottom: 25px;
+      }
+
+      .contact-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .nav-inner {
+        height: 64px;
+      }
+
+      .hero {
+        min-height: calc(100vh - 64px);
+      }
+
+      .hero-meta {
+        gap: 8px;
+      }
+
+      .pill {
+        font-size: 12px;
       }
     }
   </style>
@@ -252,21 +461,46 @@
 
 <body>
 
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">
+        YO11 <span>VENTURES</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#ventures">Ventures</a>
+        <a href="#focus">Focus</a>
+        <a href="#company">Company</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
   <header class="hero">
-    <div class="container hero-inner">
+    <div class="container hero-content">
 
       <div class="eyebrow">
         Yo Eleven Ventures, LLC
       </div>
 
       <h1>
-        YO11<br>
-        VENTURES
+        Build what<br>
+        should exist.
       </h1>
 
-      <p class="tagline">
-        Building technology that makes complicated things simple.
+      <p class="hero-sub">
+        Yo Eleven Ventures develops and explores technology
+        designed to simplify complex problems, reduce friction,
+        and improve everyday decision-making.
       </p>
+
+      <div class="hero-meta">
+        <div class="pill">Technology</div>
+        <div class="pill">Software</div>
+        <div class="pill">Intelligent Systems</div>
+        <div class="pill">Texas, USA</div>
+      </div>
 
     </div>
   </header>
@@ -274,48 +508,52 @@
 
   <main>
 
-    <section id="work">
+    <section id="ventures">
       <div class="container">
 
-        <div class="section-label">
-          Our Work
+        <div class="section-top">
+          <div class="section-label">
+            Ventures
+          </div>
+
+          <h2 class="section-lead">
+            Products built around problems worth solving.
+          </h2>
         </div>
 
-        <div class="work-grid">
+        <div class="venture-grid">
 
-          <article class="card">
-
+          <article class="venture-card">
             <div class="status">
               In Development
             </div>
 
             <div>
-              <h2>Life</h2>
+              <h3 class="venture-title">
+                Life
+              </h3>
 
-              <p>
-                Personal intelligence designed to simplify everyday life,
-                surface what matters, and help people act at the right time.
+              <p class="venture-description">
+                Personal intelligence for everyday life.
               </p>
             </div>
-
           </article>
 
 
-          <article class="card">
-
+          <article class="venture-card">
             <div class="status">
               Proprietary Platform
             </div>
 
             <div>
-              <h2>Nomad Trader</h2>
+              <h3 class="venture-title">
+                Nomad Trader
+              </h3>
 
-              <p>
-                Market intelligence and decision-support technology
-                designed for active trading.
+              <p class="venture-description">
+                Market intelligence and decision-support technology for active trading.
               </p>
             </div>
-
           </article>
 
         </div>
@@ -323,19 +561,238 @@
     </section>
 
 
-    <section id="about">
+    <section id="focus">
+      <div class="container">
+
+        <div class="section-top">
+          <div class="section-label">
+            Focus
+          </div>
+
+          <h2 class="section-lead">
+            Technology should remove work, not create more of it.
+          </h2>
+        </div>
+
+
+        <div class="focus-grid">
+
+          <div class="focus-item">
+            <div class="focus-number">01</div>
+
+            <div class="focus-title">
+              Intelligent Software
+            </div>
+
+            <div class="focus-copy">
+              Systems that turn complex information into
+              clear, useful decisions.
+            </div>
+          </div>
+
+
+          <div class="focus-item">
+            <div class="focus-number">02</div>
+
+            <div class="focus-title">
+              Automation
+            </div>
+
+            <div class="focus-copy">
+              Technology that quietly eliminates repetitive
+              tasks, unnecessary checking, and avoidable friction.
+            </div>
+          </div>
+
+
+          <div class="focus-item">
+            <div class="focus-number">03</div>
+
+            <div class="focus-title">
+              Practical AI
+            </div>
+
+            <div class="focus-copy">
+              Artificial intelligence applied where it creates
+              measurable utility rather than novelty.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="container">
+
+        <div class="section-top">
+          <div class="section-label">
+            Principles
+          </div>
+
+          <h2 class="section-lead">
+            A small number of ideas guide everything we build.
+          </h2>
+        </div>
+
+
+        <div class="principles">
+
+          <div class="principle">
+            <div class="principle-title">
+              Solve real problems.
+            </div>
+
+            <div class="principle-copy">
+              Technology is valuable when it makes something
+              meaningfully easier, faster, safer, or clearer.
+            </div>
+          </div>
+
+
+          <div class="principle">
+            <div class="principle-title">
+              Simplicity wins.
+            </div>
+
+            <div class="principle-copy">
+              The best technology hides complexity rather than
+              asking the user to manage it.
+            </div>
+          </div>
+
+
+          <div class="principle">
+            <div class="principle-title">
+              Trust is a feature.
+            </div>
+
+            <div class="principle-copy">
+              Products should be dependable, transparent,
+              privacy-conscious, and worthy of becoming part
+              of someone's everyday life.
+            </div>
+          </div>
+
+
+          <div class="principle">
+            <div class="principle-title">
+              Build for utility.
+            </div>
+
+            <div class="principle-copy">
+              We value lasting usefulness over attention,
+              engagement, or novelty for its own sake.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="company">
+      <div class="container">
+
+        <div class="section-top">
+          <div class="section-label">
+            Company
+          </div>
+
+          <h2 class="section-lead">
+            Yo Eleven Ventures is a privately held Texas technology company.
+          </h2>
+        </div>
+
+
+        <div class="company-grid">
+
+          <p class="company-large">
+            We develop proprietary software and explore opportunities
+            where technology can materially improve how people work,
+            decide, and live.
+          </p>
+
+
+          <div>
+
+            <div class="company-copy">
+              Yo Eleven Ventures, LLC serves as the development
+              and investment platform behind internally developed
+              technology products and future ventures.
+            </div>
+
+            <div class="company-facts">
+
+              <div class="fact">
+                <div class="fact-key">
+                  Legal Entity
+                </div>
+
+                <div class="fact-value">
+                  Yo Eleven Ventures, LLC
+                </div>
+              </div>
+
+
+              <div class="fact">
+                <div class="fact-key">
+                  Jurisdiction
+                </div>
+
+                <div class="fact-value">
+                  Texas, United States
+                </div>
+              </div>
+
+
+              <div class="fact">
+                <div class="fact-key">
+                  Focus
+                </div>
+
+                <div class="fact-value">
+                  Technology & Software
+                </div>
+              </div>
+
+
+              <div class="fact">
+                <div class="fact-key">
+                  Website
+                </div>
+
+                <div class="fact-value">
+                  yo11ventures.com
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="contact-section">
       <div class="container">
 
         <div class="section-label">
-          About
+          Contact
         </div>
 
-        <p class="about-copy">
-          Yo Eleven Ventures, LLC is a Texas technology company developing
-          intelligent software and digital products that simplify complex
-          problems, improve decision-making, and turn ideas into practical
-          technology.
-        </p>
+        <h2 class="contact-big">
+          Let's build something useful.
+        </h2>
+
+        <a
+          class="contact-link"
+          href="mailto:joey@yo11ventures.com"
+        >
+          joey@yo11ventures.com
+        </a>
 
       </div>
     </section>
@@ -347,20 +804,11 @@
     <div class="container footer-inner">
 
       <div>
-        <div class="company-name">
-          Yo Eleven Ventures, LLC
-        </div>
-
-        <div class="legal">
-          Texas, United States<br>
-          © 2026 Yo Eleven Ventures, LLC
-        </div>
+        © 2026 Yo Eleven Ventures, LLC
       </div>
 
-      <div class="contact">
-        <a href="mailto:joey@yo11ventures.com">
-          joey@yo11ventures.com
-        </a>
+      <div>
+        Texas, United States
       </div>
 
     </div>
