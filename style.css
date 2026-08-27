@@ -43,6 +43,13 @@ box-shadow:0 8px 26px rgba(0,0,0,.08)}
 .card>*{position:relative;z-index:1}
 .card.papi{background:linear-gradient(135deg,#0a1815,#113d32)}
 .card.papi .papi-mark{width:116px;height:auto;object-fit:contain;align-self:flex-start;margin-bottom:auto}
+.project-logo{display:block;object-fit:contain;align-self:flex-start;margin-bottom:auto}
+.nt-logo{width:112px;height:112px;border-radius:6px}
+.concom-logo{width:100%;height:92px;object-position:left center}
+.hospitality-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,34px);gap:7px 9px;align-items:center;margin-bottom:auto;padding-bottom:12px}
+.hospitality-logo{width:100%;height:30px;object-fit:contain}
+.hospitality-logo.darkmark{background:#fff;border-radius:4px;padding:4px}
+.hospitality-logo-starwood{grid-column:1 / -1;width:72%;justify-self:center}
 .card.hosp{background:linear-gradient(135deg,#191313,#51372a)}
 .card.nomad{background:linear-gradient(135deg,#090909,#2e2615)}
 .card.fiber{background:linear-gradient(135deg,#071019,#0d3150)}
@@ -72,10 +79,10 @@ box-shadow:0 8px 26px rgba(0,0,0,.08)}
 .papipay-wordmark{width:min(260px,42vw);height:auto;object-fit:contain}
 @media(max-width:980px){
  .navlinks{display:none}.story-grid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr 1fr}.ai{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}
- .hero{height:clamp(300px,52vw,520px);}.papipay-hero{gap:32px}h1{font-size:46px}
+ .hero{height:clamp(300px,52vw,520px);}.papipay-hero{gap:32px}h1{font-size:46px}.hospitality-logos{grid-template-rows:repeat(3,30px);gap:5px 7px}.hospitality-logo{height:27px}.nt-logo{width:96px;height:96px}.concom-logo{height:78px}
 }
 @media(max-width:640px){
  .container{padding:0 18px}.hero{height:clamp(280px,78vw,390px)}
- h1{font-size:39px}.story-grid,.projects,.content-grid,.footer-grid,.video-grid{grid-template-columns:1fr}.pillar{border-left:0;border-top:1px solid #333;padding:18px 0 0}.papipay-hero{display:block}.papipay-wordmark{width:min(300px,82vw);margin-bottom:28px}
+ h1{font-size:39px}.story-grid,.projects,.content-grid,.footer-grid,.video-grid{grid-template-columns:1fr}.pillar{border-left:0;border-top:1px solid #333;padding:18px 0 0}.papipay-hero{display:block}.papipay-wordmark{width:min(300px,82vw);margin-bottom:28px}.hospitality-logos{grid-template-rows:repeat(3,32px);gap:5px 8px}.hospitality-logo{height:28px}.nt-logo{width:100px;height:100px}.concom-logo{height:82px}
  .flow{grid-template-columns:1fr}.nav{height:70px}.brand span{font-size:21px}
 }
