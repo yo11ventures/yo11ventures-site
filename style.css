@@ -1,0 +1,80 @@
+
+:root{
+  --bg:#0b0b0b;--panel:#111;--text:#151515;--muted:#666;--red:#d62727;
+  --line:#e8e8e8;--white:#fff;--max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:auto;padding:0 28px}
+.header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:20;border-bottom:1px solid #eee}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.02em}
+.brand img{width:55px;height:42px;object-fit:contain}
+.brand span{font-family:Georgia,serif;font-style:italic;font-size:26px}
+.navlinks{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700;letter-spacing:.06em}
+.navlinks a:hover,.navlinks a.active{color:var(--red)}
+.cta{background:#111;color:#fff;padding:13px 20px;border-radius:7px;font-weight:700;font-size:13px}
+.hero{min-height:560px;background:
+linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.82) 35%,rgba(255,255,255,.12) 72%),
+url('assets/storefront.png') center/cover no-repeat;display:flex;align-items:center}
+.hero-copy{max-width:560px;padding:80px 0}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--red);text-transform:uppercase}
+h1{font-size:58px;line-height:1.05;margin:12px 0 22px;letter-spacing:-.035em}
+h1 .red{color:var(--red)}
+.lead{font-size:19px;color:#333;max-width:540px}
+.buttons{display:flex;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid #111;border-radius:6px;font-size:13px;font-weight:800}
+.btn.dark{background:#111;color:#fff}
+.story{background:#0d0d0d;color:#fff;padding:44px 0}
+.story-grid{display:grid;grid-template-columns:240px 1.4fr repeat(3,1fr);gap:26px;align-items:center}
+.story-img{border-radius:10px;overflow:hidden}
+.story h2,.section h2{font-size:34px;margin:4px 0 12px}
+.story p{color:#d0d0d0;font-size:14px}
+.pillar{border-left:1px solid #343434;padding-left:24px}
+.pillar .icon{font-size:30px;color:var(--red)}
+.pillar h3{font-size:14px;letter-spacing:.07em}
+.section{padding:78px 0}
+.center{text-align:center}
+.projects{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+.card{min-height:330px;border-radius:12px;overflow:hidden;position:relative;background:#111;color:#fff;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;
+box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.86));z-index:0}
+.card>*{position:relative;z-index:1}
+.card.papi{background:linear-gradient(135deg,#0a1815,#113d32)}
+.card.hosp{background:linear-gradient(135deg,#191313,#51372a)}
+.card.nomad{background:linear-gradient(135deg,#090909,#2e2615)}
+.card.fiber{background:linear-gradient(135deg,#071019,#0d3150)}
+.card.life{background:linear-gradient(135deg,#131313,#403327)}
+.card h3{font-size:24px;margin:4px 0}
+.card p{font-size:13px;color:#ddd}
+.card .more{font-size:12px;font-weight:800;letter-spacing:.08em;margin-top:14px}
+.ai{background:#0d0d0d;color:#fff;border-radius:16px;padding:42px;margin-top:58px;display:grid;grid-template-columns:1.1fr 1.9fr;gap:40px}
+.ai p{color:#cfcfcf}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{padding:18px;border-left:1px solid #333}
+.step b{display:block;margin:8px 0}
+.footer{background:#0a0a0a;color:#fff;padding:44px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer p,.footer a{color:#bbb;font-size:14px}
+.social{display:flex;gap:14px;flex-wrap:wrap}
+.social a{border:1px solid #444;border-radius:8px;padding:11px 14px;color:#fff}
+.page-hero{background:#0d0d0d;color:#fff;padding:100px 0 70px}
+.page-hero h1{font-size:52px}
+.content{padding:70px 0}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.content h2{font-size:34px}
+.panel{background:#f6f6f6;padding:28px;border-radius:12px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.video{aspect-ratio:16/9;border:0;width:100%;border-radius:10px}
+@media(max-width:980px){
+ .navlinks{display:none}.story-grid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr 1fr}.ai{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}
+ .hero{background-position:65% center}.hero-copy{max-width:470px}h1{font-size:46px}
+}
+@media(max-width:640px){
+ .container{padding:0 18px}.hero{min-height:520px;background:linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),url('assets/storefront.png') center/cover}
+ h1{font-size:39px}.story-grid,.projects,.content-grid,.footer-grid,.video-grid{grid-template-columns:1fr}.pillar{border-left:0;border-top:1px solid #333;padding:18px 0 0}
+ .flow{grid-template-columns:1fr}.nav{height:70px}.brand span{font-size:21px}
+}
